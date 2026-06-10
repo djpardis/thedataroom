@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <title>{{ title }}</title>
+  {% if noindex %}<meta name="robots" content="noindex" />{% endif %}
+  {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
+  {% if og %}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thedataroom.app/" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:image" content="https://thedataroom.app/assets/card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="https://thedataroom.app/assets/card.png" />
+  <link rel="canonical" href="https://thedataroom.app/" />
+  {% endif %}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fdfcfc;
+      --text: #211e1e;
+      --dim: #656363;
+      --accent: #211e1e;
+      --rule: #e4e4e0;
+      --surface: #f8f7f7;
+      --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c1a1a;
+        --text: #e6e0dc;
+        --dim: #8a8585;
+        --accent: #f1ecec;
+        --rule: #4b4646;
+        --surface: #2a2626;
+      }
+    }
+
+    html, body { font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: underline; text-decoration-color: var(--dim); text-underline-offset: 3px; }
+    a:hover { text-decoration-color: var(--text); }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 72px 40px 180px;
+    }
+
+    header {
+      margin-bottom: 72px;
+    }
+
+    .wordmark {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--dim);
+      font-family: var(--mono);
+      letter-spacing: 0.04em;
+    }
+
+    section { margin-bottom: 72px; }
+
+    h1 { font-size: 28px; font-weight: 400; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+
+    h2 {
+      font-size: 11px;
+      font-family: var(--mono);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .lede {
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .updated {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+      margin-bottom: 56px;
+    }
+
+    /* diagram */
+    .diagram {
+      margin: 40px 0;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 32px 28px;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--dim);
+      overflow-x: auto;
+    }
+
+    .diagram-title {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: var(--dim);
+    }
+
+    .diagram-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+
+    .box {
+      border: 1px solid var(--rule);
+      padding: 7px 14px;
+      border-radius: 3px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .box.you { border-color: var(--accent); color: var(--accent); }
+
+    .action {
+      display: inline-block;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      padding: 1px 6px;
+      margin-left: 6px;
+      font-size: 10px;
+      color: var(--dim);
+      letter-spacing: 0.04em;
+      background: var(--bg);
+    }
+    .action.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    /* feature list */
+    .feature-list { list-style: none; padding: 0; }
+
+    .feature-list li {
+      font-size: 16px;
+      color: var(--text);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-list li:first-child { border-top: 1px solid var(--rule); }
+
+    .feat-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 28px;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+
+    .cta-block {
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .cta-block p { font-size: 14px; color: var(--dim); }
+
+    .cta-email {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--dim);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .cta-email:hover { border-color: var(--accent); }
+
+    footer {
+      margin-top: 120px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 56px 20px 100px; }
+      .feature-list li { flex-direction: column; gap: 4px; }
+      .feat-label { min-width: unset; }
+      footer { flex-direction: column; gap: 8px; }
+      .diagram-row { flex-wrap: wrap; }
+    }
+
+    {{ extraStyle }}
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <a href="/" class="wordmark">The Data Room</a>
+      <div class="tagline">thedataroom.app</div>
+    </header>
+
+    {{ content }}
+
+    <footer>
+      <span>&#169; <span id="year"></span> THE DATA ROOM</span>
+      <span>
+        <a href="/privacy">PRIVACY</a>
+        &nbsp;&nbsp;
+        <a href="/terms">TERMS</a>
+      </span>
+    </footer>
+
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

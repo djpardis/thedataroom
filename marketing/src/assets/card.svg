@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- background -->
+  <rect width="1200" height="630" fill="#fdfcfc"/>
+
+  <!-- nameplate -->
+  <text x="600" y="90"
+    font-family="'SF Mono', 'Fira Code', monospace"
+    font-size="18"
+    letter-spacing="10"
+    text-anchor="middle"
+    fill="#211e1e">THE DATA ROOM</text>
+
+  <!-- rule under nameplate -->
+  <line x1="60" y1="108" x2="1140" y2="108" stroke="#211e1e" stroke-width="1"/>
+  <line x1="60" y1="112" x2="1140" y2="112" stroke="#211e1e" stroke-width="1"/>
+
+  <!-- column divider -->
+  <line x1="460" y1="122" x2="460" y2="480" stroke="#cfcecd" stroke-width="1"/>
+
+  <!-- LEFT: large logo mark -->
+  <g transform="translate(130, 180) scale(8)">
+    <rect width="32" height="32" fill="#fdfcfc"/>
+    <rect x="2" y="3" width="28" height="4" fill="#211e1e"/>
+    <rect x="2" y="10" width="28" height="3" fill="#211e1e"/>
+    <rect x="2" y="16" width="28" height="2" fill="#211e1e" opacity="0.3"/>
+    <rect x="2" y="20" width="28" height="2" fill="#211e1e" opacity="0.3"/>
+    <rect x="2" y="24" width="28" height="2" fill="#211e1e" opacity="0.3"/>
+    <rect x="2" y="28" width="18" height="2" fill="#211e1e" opacity="0.3"/>
+  </g>
+
+  <!-- RIGHT: headline + subline -->
+  <text x="510" y="240"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="72"
+    font-weight="400"
+    fill="#211e1e">Every organization</text>
+  <text x="510" y="324"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="72"
+    font-weight="400"
+    fill="#211e1e">is a small civilization.</text>
+
+  <text x="510" y="404"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+    font-size="22"
+    fill="#656363">Sharing anything remains an act of diplomacy.</text>
+
+  <!-- bottom rule -->
+  <line x1="60" y1="490" x2="1140" y2="490" stroke="#cfcecd" stroke-width="1"/>
+
+  <!-- feature tags -->
+  <text x="60"  y="528" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" letter-spacing="2" fill="#656363">THE SPACE</text>
+  <text x="240" y="528" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" letter-spacing="2" fill="#656363">THE VIEWER</text>
+  <text x="430" y="528" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" letter-spacing="2" fill="#656363">THE CONVERSATION</text>
+  <text x="700" y="528" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" letter-spacing="2" fill="#656363">THE CONTROL</text>
+  <text x="900" y="528" font-family="'SF Mono', 'Fira Code', monospace" font-size="12" letter-spacing="2" fill="#656363">THE INTELLIGENCE</text>
+
+  <!-- url -->
+  <text x="60" y="590"
+    font-family="'SF Mono', 'Fira Code', monospace"
+    font-size="13"
+    letter-spacing="3"
+    fill="#b7b1b1">thedataroom.app</text>
+</svg>
