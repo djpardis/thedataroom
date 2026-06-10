@@ -233,7 +233,9 @@
       align-items: center;
     }
 
-    .footer-right { display: inline-flex; align-items: center; gap: 18px; }
+    .footer-right { display: inline-flex; align-items: center; }
+    .footer-right > * + * { margin-left: 22px; }
+    .footer-right > .footer-link + .footer-link { margin-left: 14px; }
 
     .social-icon, .footer-link {
       display: inline-flex;
